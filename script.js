@@ -4,4 +4,9 @@ function greet() {
 }
 
 // Call the function when the page loads
-window.onload = greet;
+function greet() {
+    console.log("Hello, welcome to my basic web application! ");
+  }
+  
+  greet(); // Call the function directly since there's no window.onload in Node.js
+  
