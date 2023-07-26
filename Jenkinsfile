@@ -23,7 +23,6 @@ pipeline {
             steps {
                 // Deploy the application to a local web server (for example, using Python's SimpleHTTPServer)
                 sh 'http-server dist -p 8000'
-'
             }
         }
     }
