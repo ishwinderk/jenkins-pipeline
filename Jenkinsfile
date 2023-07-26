@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Deploy the application to a local web server (for example, using Python's SimpleHTTPServer)
-                sh 'C:/Python310 -m http.server 8000 --directory dist'
+                sh 'python -m http.server 8000 --directory dist'
             }
         }
     }
