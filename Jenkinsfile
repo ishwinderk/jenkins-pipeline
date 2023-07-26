@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Deploy the application to a local web server (for example, using Python's SimpleHTTPServer)
-                sh 'http-server dist -p 8000'
+                sh 'npx http-server dist -p 8000'
             }
         }
     }
