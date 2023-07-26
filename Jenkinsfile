@@ -21,8 +21,18 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // Deploy the application to a local web server (for example, using Python's SimpleHTTPServer)
+                // Create and activate the virtual environment
+                sh 'python3 -m venv myenv'
+                sh 'source myenv/bin/activate'
+
+                // Install any required dependencies (if needed)
+                // sh 'pip install -r requirements.txt'
+
+                // Deploy the application using Python's SimpleHTTPServer
                 sh 'python -m http.server 8000 --directory dist'
+
+                // Deactivate the virtual environment after the server is stopped
+                sh 'deactivate'
             }
         }
     }
